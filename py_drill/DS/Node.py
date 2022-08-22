@@ -8,3 +8,11 @@ class Node:
 
     def __str__(self):
         return f"{self.data} {self.pnext}"
+
+
+def main():
+    n1 = Node(10)
+    print(n1)
+
+if __name__ == "__main__":
+    main()
