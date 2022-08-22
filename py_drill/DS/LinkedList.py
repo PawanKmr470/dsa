@@ -1,10 +1,10 @@
 from Node import Node
 
-
 class LinkedList:
     """Singly Linked List"""
     def __init__(self):
         self.head = None
+        # Take self.size = 0 variable to maintain size
 
     def create_list(self, nums):
         for num in nums:
