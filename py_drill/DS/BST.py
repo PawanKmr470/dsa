@@ -108,6 +108,27 @@ class BST:
         print("Inorder rec element : {}".format(node.data))
         self.__print_inorder_rec(node.right)
 
+    #
+    # Postorder Traversal
+    #
+    def print_postorder(self):
+        print("TODO")
+        return
+
+
+    def print_postorder_rec(self):
+        if self.root is None:
+            print("BST is empty.")
+            return
+        self.__print_postorder_rec(self.root)
+
+    def __print_postorder_rec(self, node):
+        if node is None:
+            return
+        self.__print_postorder_rec(node.left)
+        self.__print_postorder_rec(node.right)
+        print("Postorder rec element : {}".format(node.data))
+
 
 def main():
     bst = BST()
@@ -122,6 +143,8 @@ def main():
     print("****************************")
     bst.print_inorder()
     bst_rec.print_inorder_rec()
+    print("****************************")
+    bst_rec.print_postorder_rec()
 
 
 if __name__ == "__main__":
