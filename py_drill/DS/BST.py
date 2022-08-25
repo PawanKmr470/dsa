@@ -115,7 +115,6 @@ class BST:
         print("TODO")
         return
 
-
     def print_postorder_rec(self):
         if self.root is None:
             print("BST is empty.")
