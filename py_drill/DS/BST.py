@@ -48,7 +48,6 @@ class BST:
     # Preorder Traversal
     #
     def print_preorder(self):
-        result = []
         if self.root is None:
             print("BST is empty.")
             return
@@ -57,15 +56,13 @@ class BST:
         stack.append(self.root)
         while len(stack) > 0:
             node = stack.pop()
-            result.append(node.data)
+            print("Preorder element : {}".format(node.data))
 
             # NOTE : push right first bcz it will be popped at last or visited last
             if node.right:
                 stack.append(node.right)
             if node.left:
                 stack.append(node.left)
-
-        print("Preorder element : {}".format(result))
 
     def print_preorder_rec(self):
         if self.root is None:
@@ -197,30 +194,24 @@ class BST:
 
 def main():
     bst = BST()
-    bst_rec = BST()
-
-    bst.insert([5, 1, 10, 100, 200, 300, 400])
-    bst_rec.insert([5, 1, 10, 100, 200, 300, 400])
-    # bst.insert_([50, 10, 100])
-    # bst_rec.insert_rec([50, 10, 100])
+    # bst.insert([8, 6, 10])
+    bst.insert([8, 6, 10, 5, 7, 9, 12, 1])
 
     print("****************************")
     bst.print_preorder()
-    bst_rec.print_preorder_rec()
+    bst.print_preorder_rec()
     print("****************************")
     bst.print_inorder()
-    bst_rec.print_inorder_rec()
+    bst.print_inorder_rec()
     print("****************************")
     bst.print_postorder()
-    bst_rec.print_postorder_rec()
+    bst.print_postorder_rec()
     print("****************************")
     bst.print_levelorder()
     print("****************************")
     bst.print_height()
-    bst_rec.print_height_rec()
-    # bst1 = BST()
-    # bst1.insert([5])
-    # bst1.print_height()
+    bst.print_height_rec()
+    print("****************************")
 
 
 if __name__ == "__main__":
