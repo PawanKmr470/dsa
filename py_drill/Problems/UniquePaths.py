@@ -1,5 +1,8 @@
 # https://leetcode.com/problems/unique-paths/
 
+# Only recursion
+# Time Complexity: ~O( 2^ max(m, n))
+# Space Complexity: ~O(max(m, n))
 class Solution1:
     def uniquePaths(self, m: int, n: int) -> int:
         if m < 1 or n < 1: return 0
@@ -29,6 +32,7 @@ class Solution2:
         return self.__unique_paths(m - 1, n) + self.__unique_paths(m, n - 1)
 
 
+# Recursion with memoization
 # T : O(mxn)
 # S : O(mxn)
 class Solution3:
@@ -48,6 +52,7 @@ class Solution3:
                      self.__unique_paths(m, n - 1, memo)
         return memo[m][n]
 
+# DP
 # T : O(mxn)
 # S : O(mxn)
 class Solution4:
@@ -66,7 +71,7 @@ class Solution4:
 
         return dp[m - 1][n - 1]
 
-# Space optimization
+# DP - Space optimization
 # T : O(mxn)
 # S : O(n) only 2 array would be required
 class Solution5:
