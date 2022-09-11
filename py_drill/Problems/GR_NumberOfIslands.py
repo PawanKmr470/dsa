@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class Solution:
     def numIslands(self, grid: list[list[str]]) -> int:
         if not grid:
