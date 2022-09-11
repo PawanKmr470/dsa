@@ -1,4 +1,14 @@
-from Node import Node
+class Node:
+    def __init__(self, data, pnext=None):
+        self.data = data
+        self.pnext = pnext
+
+    def __repr__(self):
+        return "Node(data, pnext)"
+
+    def __str__(self):
+        return f"{self.data} {self.pnext}"
+
 
 class LinkedList:
     """Singly Linked List"""
@@ -59,6 +69,12 @@ class LinkedList:
 
 
 def main():
+
+    # n1 = Node(10)
+    # print(n1)
+    # t1 = BSTNode(20)
+    # print(t1)
+
     l1 = LinkedList()
     l1.create_list([10, 20, 30, 40])
     print(l1.print_list())
