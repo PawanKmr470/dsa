@@ -1,5 +1,17 @@
-from Node import BSTNode
 from collections import deque
+
+class BSTNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+    def __repr__(self):
+        return "tNode(data, left, right)"
+
+    def __str__(self):
+        return f"data : {self.data}, left : {self.left}, right : {self.right}"
+
 
 class BST:
     def __init__(self):
@@ -193,6 +205,12 @@ class BST:
 
 
 def main():
+
+    # n1 = Node(10)
+    # print(n1)
+    # t1 = BSTNode(20)
+    # print(t1)
+
     bst = BST()
     # bst.insert([8, 6, 10])
     bst.insert([8, 6, 10, 5, 7, 9, 12, 1])
