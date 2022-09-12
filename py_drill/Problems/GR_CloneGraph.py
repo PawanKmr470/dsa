@@ -6,6 +6,9 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 
+
+# T: O(V + E) - for BFS
+# S: O(V) - for the hashmap
 class Solution1:
     def cloneGraph(self, node: 'Node') -> 'Node':
         if node is None: return None
