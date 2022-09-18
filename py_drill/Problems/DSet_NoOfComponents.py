@@ -3,6 +3,7 @@
 #   Rank doesn't let form skew tree
 #   Path compression reduces the tree height and converges O(log n) to O(1)
 #   For cycle detection keep unioning the edges and check for p1 == p2
+#   Other standard approach : DFS/BFS on each node with visited array
 
 # T: O(log n)
 # S: O(
