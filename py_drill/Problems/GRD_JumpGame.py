@@ -3,6 +3,8 @@
 #       Here Greedy is preferred over DP.
 #       If the question asks min no of hops to reach end index instead of returing T/F,
 #       may be DP could solve that but with same idea starting from end to index 0.
+#       Brute Force approach - T: O(n^n)
+#       Brute Force with caching T: O(n^2)
 
 # T: O(n)
 # S: O(1)
