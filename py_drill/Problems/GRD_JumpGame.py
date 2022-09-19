@@ -21,7 +21,7 @@ class Solution:
 
 def main():
     nums = [2,3,1,1,4]
-    print("max sumarray sum : {}".format(Solution().canJump(nums)))
+    print("can jump : {}".format(Solution().canJump(nums)))
 
 if __name__ == "__main__":
     main()
