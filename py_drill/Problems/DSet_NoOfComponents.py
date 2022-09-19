@@ -5,8 +5,15 @@
 #   For cycle detection keep unioning the edges and check for p1 == p2
 #   Other standard approach : DFS/BFS on each node with visited array
 
-# T: O(log n)
-# S: O(
+# With DFS solution T & S complexities are -
+# T: O(E+V)
+# S: Building the adjacency list O(E)
+#    visited set O(V)
+#    run-time stack for DFS will use O(V)
+
+# With Disjoint set -
+# T: O(log V)
+# S: O(V) due to rank & parent array
 
 class Solution:
     def countComponents(self, n: int, edges: list[list[int]]) -> int:
