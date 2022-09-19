@@ -4,7 +4,7 @@
 #       In loop, keep checking if prev meeting's end time is not greater than
 #       current meeting's start time
 
-# T: O(n)
+# T: O(nlogn)
 # S: O(1)
 
 class Solution:
