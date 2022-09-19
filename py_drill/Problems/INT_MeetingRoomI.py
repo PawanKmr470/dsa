@@ -13,10 +13,15 @@ class Solution:
             return False
 
         intervals.sort()
-        prev_end = intervals[0][1]
-        for i in range(1,len(intervals)):
-            cur_start = intervals[i][0]
-            if cur_start < prev_end:
+        # prev_end = intervals[0][1]
+        # for i in range(1,len(intervals)):
+        #     cur_start = intervals[i][0]
+        #     if prev_end > cur_start:
+        #         return False
+        # return True
+
+        for i in range(len(intervals) - 1):
+            if intervals[i][1] > intervals[i + 1][0]:
                 return False
         return True
 
