@@ -21,7 +21,7 @@ class Solution:
 
         while minHeap:
             w1, n1 = heapq.heappop(minHeap)
-            if n1 in visit:
+            if n1 in visit:                     # does it work without this condition ?
                 continue
             visit.add(n1)
             t = max(t, w1)
