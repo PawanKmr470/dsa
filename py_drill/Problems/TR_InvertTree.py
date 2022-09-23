@@ -3,7 +3,8 @@
 #       Just preorder traversal and swap the elements
 #       Actually any order traversal works :D
 
-# Definition for a binary tree node.
+from collections import deque
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -13,7 +14,7 @@ class TreeNode:
 class Solution:
     def invertTree(self, root: TreeNode):
         if root is None:
-            return None
+            return 0
 
         root.left, root.right = root.right, root.left
 
@@ -22,3 +23,24 @@ class Solution:
 
         return root
 
+    def invertTree_iterative(self, root):
+        if root is None:
+            return None
+
+        q = deque()
+        q.append(root)
+        while q:
+            node = q.popleft()
+            node.left, node.right = node.right, node.left
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+
+        return root
+
+def main():
+    return
+
+if __name__ == "__main__":
+    main()
