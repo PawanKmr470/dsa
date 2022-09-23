@@ -1,7 +1,7 @@
 # REF : https://leetcode.com/problems/invert-binary-tree/
 # NOTES :
 #       Just preorder traversal and swap the elements
-#       Actually any order traversal works :D
+#       Actually any order traversal works
 
 from collections import deque
 
