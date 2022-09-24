@@ -37,7 +37,6 @@ class Solution2:
 
         return result
 
-
 # BFS O(n)
 class Solution3:
     def maxDepth(self, root: TreeNode) -> int:
@@ -48,28 +47,8 @@ class Solution3:
         q = deque()
         q.append(root)
         while q:
-            node = q.popleft()
-            if not len(q):          # After popping, if the Queue gets emtpy then that level is traversed
-                depth += 1
-            if node.left:
-                q.append(node.left)
-            if node.right:
-                q.append(node.right)
-
-        return depth
-
-# BFS O(n)
-class Solution4:
-    def maxDepth(self, root: TreeNode) -> int:
-        if root is None:
-            return 0
-
-        depth = 0
-        q = deque()
-        q.append(root)
-        while q:
-            for i in range(len(q)):     # Same logic, increment depth every time the Queue is empty
-                node = q.popleft()
+            for i in range(len(q)):     # Increment depth every time the Queue is empty
+                node = q.popleft()      # Queue will get empty each time when a level is traversed
                 if node.left:
                     q.append(node.left)
                 if node.right:
