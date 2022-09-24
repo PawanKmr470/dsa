@@ -18,7 +18,7 @@ class Solution:
         if not p and not q:
             return True
 
-        if not p or not q:      # means either is None, return False => if p and q:   also works
+        if not p or not q:
             return False
 
         if p.val != q.val:
