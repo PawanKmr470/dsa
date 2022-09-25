@@ -6,7 +6,7 @@
 #               return -1 if not balanced else return height of subtrees
 
 # T: O(n^2)
-# S: O(n)
+# S: O(H^2) for balanced tree OR O(n^2) for skew tree case
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -30,7 +30,9 @@ class Solution:
         return 1 + max(self.height(root.left), self.height(root.right))
 
 # T: O(n)
-# S: O(n)
+# S: O(H) - Height of BT : H = logn
+#       In case of balanced tree S : O(H)
+#       In case of skew tree     S : O(n)
 class Solution2:
     def isBalanced(self, root):
         if root is None:
@@ -52,7 +54,7 @@ class Solution2:
         if abs(lh - rh) > 1:
             return -1
 
-        return 1 + max(self.height(root.left), self.height(root.right))
+        return 1 + max(lh, rh)
 
 
 def main():
