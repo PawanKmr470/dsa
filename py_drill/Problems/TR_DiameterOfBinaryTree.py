@@ -3,8 +3,6 @@
 #       while stack unwinding, calculate height of the node and just before that
 #       keep storing the max result
 
-# T: O(n)
-# S: O(n)
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -13,7 +11,7 @@ class TreeNode:
 
 # Working but not efficient
 # T: O(n^2) due to height calculation
-# S: O(n)
+# S: O(H^2) for balanced tree or O(N^2) in case of skew tree
 class Solution1:
     def diameterOfBinaryTree(self, root):
         if root is None:
@@ -33,7 +31,7 @@ class Solution1:
 
 
 # T: O(n)
-# S: O(n)
+# S: O(H) for balanced tree or O(n) in case of skew tree
 class Solution2:
     def diameterOfBinaryTree(self, root):
         result = []
@@ -46,8 +44,8 @@ class Solution2:
             lh = heightwithself(root.left)
             rh = heightwithself(root.right)
 
-            result[0] = max(result[0], lh + rh)
-
+            result[0] = max(result[0], lh + rh)     # Nothing to do with node val
+                                                    # count of edges is required i.e. lh + rh
             return 1 + max(lh, rh)
 
         heightwithself(root)
