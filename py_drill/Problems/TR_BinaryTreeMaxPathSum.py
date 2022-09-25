@@ -1,9 +1,9 @@
 # REF : https://leetcode.com/problems/binary-tree-maximum-path-sum/
 # NOTES :
-#       Same concept of Diameter of binary tree
+#       Same concept of Diameter of binary tree. Postorder traversal
 
 # T: O(n)
-# S: O(n)
+# S: O(H) for balanced tree OR O(n) for skew tree
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
