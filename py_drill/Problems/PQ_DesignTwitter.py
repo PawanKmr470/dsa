@@ -2,6 +2,7 @@
 # NOTES :
 #       followMap -> Hash Map of Sets (HashSets)
 #       tweetID   -> Hash Map of lists
+#       maxHeap for recent news feed (Merge K sorted lists using minHeap concept)
 
 from collections import defaultdict
 import heapq
