@@ -7,50 +7,70 @@
 
 class Solution:
     def findMin(self, nums: list[int]) -> int:
-        N = len(nums)
-        start = 0
-        end = len(nums) - 1
+        if len(nums) == 1 or nums[0] < nums[-1]:
+            return nums[0]
 
-        while start <= end:
+        l, r = 0, len(nums) - 1
+        while l <= r:
+            m = l + (r - l) // 2
+            if m > 0 and nums[m - 1] > nums[m]:
+                return nums[m]
 
-            if nums[start] <= nums[end]: return nums[start]
+            if nums[m] > nums[r]:
+                l = m + 1
+            else:
+                r = m - 1
 
-            mid = (start + end) // 2
-            next = (mid + 1) % N
-            prev = (mid - 1 + N) % N
-
-            if nums[mid] <= nums[prev] and nums[mid] <= nums[next]:
-                return nums[mid]
-            elif nums[start] <= nums[mid]:
-                start = mid + 1
-            elif nums[mid] <= nums[end]:
-                end = mid - 1
-
-        return -1
+        return nums[l]
 
 class Solution2:
     def findMin(self, nums: list[int]) -> int:
-        res = nums[0]
+        if len(nums) == 1 or nums[0] < nums[-1]:
+            return nums[0]
+
         l, r = 0, len(nums) - 1
 
-        while l <= r:
-            if nums[l] <= nums[r]:
-                res = min(res, nums[l])
-                break
+        while l < r:
+            if nums[l] < nums[r]:
+                return nums[l]
 
-            mid = (l + r) // 2
-            res = min(res, nums[mid])
-            if nums[l] <= nums[mid]:
-                l = mid + 1
+            m = (l + r) // 2
+            if nums[m] > nums[r]:
+                l = m + 1
             else:
-                r = mid - 1
+                r = m
 
-        return res
+        return nums[l]
+
+
+# Recursive solution
+class Solution3:
+    def findMin(self, nums: list[int]) -> int:
+        if len(nums) == 1 or nums[0] < nums[-1]:
+            return nums[0]
+        return self.find_rec(nums, 0, len(nums) - 1)
+
+    def find_rec(self, nums, l, r):
+
+        if nums[l] < nums[r]:
+            return nums[l]
+        if l < r:
+            m = (l + r) // 2
+            if nums[m] > nums[r]:
+                return self.find_rec(nums, m + 1, r)
+            else:
+                return self.find_rec(nums, l, m)
+        else:
+            return nums[l]
 
 
 def main():
-    print("output : {}".format(Solution().findMin([4,5,6,7,0,1,2])))
-    print("output : {}".format(Solution2().findMin([4,5,6,7,0,1,2])))
+    # nums = [4,5,6,7,0,1,2]
+    nums = [5,6,7,8,9,10,0,1,2,3,4]
+    # nums = [10,0,1,2,3,4,5,6,7,8,9]
+    print("output : {}".format(Solution().findMin(nums)))
+    print("output : {}".format(Solution2().findMin(nums)))
+    print("output : {}".format(Solution3().findMin(nums)))
 
 if __name__ == "__main__":
     main()
