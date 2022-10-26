@@ -27,6 +27,22 @@ class Solution:
 
         return False if len(s) else True
 
+    def isValid2(self, expn: str) -> bool:
+        s = deque()
+        hashmap = {']': '[', '}': '{', ')': '('}
+        for i in range(len(expn)):
+            if expn[i] in hashmap:
+                if s:
+                    if s.pop() != hashmap[expn[i]]:
+                        return False
+                else:
+                    return False
+            else:
+                s.append(expn[i])
+
+        return False if len(s) else True
+
 
 if __name__ == "__main__":
     print(Solution().isValid("(]"))
+    print(Solution().isValid2("(()()[{()}])"))
