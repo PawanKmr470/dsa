@@ -1,6 +1,6 @@
 # REF : https://leetcode.com/problems/generate-parentheses/
 # NOTES :
-#       Backtracking + Stack
+#       Stack + DFS + Backtracking
 #       if open count == close count == n then it's one of the results
 #       if open count < n then we can add "("
 #       if close count < open count then we can add ")"
