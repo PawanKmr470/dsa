@@ -5,8 +5,8 @@
 #       if open count < n then we can add "("
 #       if close count < open count then we can add ")"
 
-# T: O()
-# S: O()
+# T: O( 4^n / n * sqrt(n) )
+# S: O( 4^n / n * sqrt(n) )
 
 class Solution:
     def generateParenthesis(self, n: int) -> list[str]:
