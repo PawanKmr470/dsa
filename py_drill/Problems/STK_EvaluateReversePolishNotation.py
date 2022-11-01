@@ -3,11 +3,11 @@
 #       Use stack. while traversing once the operator comes, pop two values,
 #       perform operation and push again into stack.
 
-# T: O()
-# S: O()
+# T: O(n)
+# S: O(n)
 
 class Solution:
-    def evalRPN(self, tokens: List[str]) -> int:
+    def evalRPN(self, tokens: list[str]) -> int:
         stack = []
         for x in tokens:
             if x not in ["+", "-", "*", "/"]:
