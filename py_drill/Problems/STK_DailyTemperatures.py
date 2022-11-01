@@ -1,5 +1,6 @@
 # REF : https://leetcode.com/problems/daily-temperatures/
 # NOTES :
+#       Monotinic Stack
 #       Stack is used to keep last warmer temperature and it's day count so far
 #       if temp increases (> than temps which are on stack) then it's compared with
 #       stack's top value and days diff is updated in result array. Keep comparing
