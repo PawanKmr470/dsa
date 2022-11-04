@@ -2,8 +2,8 @@
 # NOTES :
 #       Hash map -> counts : strings
 
-# T: O()
-# S: O()
+# T: O(words * word count * 26) ~ O(m*n)
+# S: O(m*n)
 
 from collections import defaultdict
 class Solution:
