@@ -32,12 +32,12 @@ class Solution2:
     def groupStrings(self, strings: list[str]) -> list[list[str]]:
         hashmap = collections.defaultdict(list)
         for s in strings:
-            key = "-" if len(s) else ""     # To avoid emtpy key for len(s) == 1
+            key = ()
             for i in range(len(s) - 1):
                 circular_difference = ( (ord(s[i+1]) - ord(s[i])) + 26 ) % 26
-                key += str(circular_difference)
-            hashmap[key].append(s)
-
+                key += (circular_difference,)   # making it string will give collision
+            hashmap[key].append(s)              # ["abc"] & ["al"] both will give "11"
+                                                # so tuple is best choice here
         return list(hashmap.values())
 
 def main():
