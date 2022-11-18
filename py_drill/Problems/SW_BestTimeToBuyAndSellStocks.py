@@ -1,5 +1,6 @@
 # REF : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 # NOTES :
+#       Brute force is to calculate profit with whole list for each element but that is O(n^2)
 #       Sliding window : if selling is low that is the next left ptr, if selling is high
 #       that is next right ptr
 
