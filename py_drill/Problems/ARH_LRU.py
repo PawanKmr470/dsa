@@ -11,6 +11,7 @@
 #           so DLL is good choice. In short -
 #           DLL -> A DS for LRU logic
 #           Hashmap -> To achieve get() & set() in O(1) as it will maintain addr of nodes with keys
+#           In C++, only key was used in DLL. check it out.
 
 # >>> cache = OrderedDict()
 # >>> cache[1] = 1
