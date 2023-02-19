@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43764AE027D9AC7600BAA38B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43764ADF27D9AC7600BAA38B /* main.cpp */; };
+		43D30CA828F2061200C0F7FD /* ThreadOddEven.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43D30CA728F2061200C0F7FD /* ThreadOddEven.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		43764ADC27D9AC7600BAA38B /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		43764ADF27D9AC7600BAA38B /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		43D30CA728F2061200C0F7FD /* ThreadOddEven.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadOddEven.cpp; path = ../../../../Testcode/ThreadOddEven.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				43764ADF27D9AC7600BAA38B /* main.cpp */,
+				43D30CA728F2061200C0F7FD /* ThreadOddEven.cpp */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43764AE027D9AC7600BAA38B /* main.cpp in Sources */,
+				43D30CA828F2061200C0F7FD /* ThreadOddEven.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
