@@ -13,7 +13,7 @@ class Solution:
 
         for i, n in enumerate(nums):
             if i > 0 and n == nums[i - 1]:
-                continue
+                continue    # For skipping the duplicates
 
             l, r = i + 1, len(nums) - 1
             while l < r:
@@ -25,6 +25,8 @@ class Solution:
                 else:
                     res.append([n, nums[l], nums[r]])
                     l += 1
+
+                    # For skipping the duplicates
                     while nums[l] == nums[l - 1] and l < r:
                         l += 1
         return res

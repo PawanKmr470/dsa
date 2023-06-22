@@ -1,6 +1,10 @@
 # REF : https://leetcode.com/problems/binary-tree-maximum-path-sum/
 # NOTES :
-#       Same concept of Diameter of binary tree. Postorder traversal
+#       Run DFS & while rolling back calculate max sum so far and store it in a max_sum variable.
+#       max_sum will be -> max including this current node OR excluding this current node
+#       (i.e. max_sum so far) -> max(maxSum, node.val + left_max + right_max)
+#       while returning, it will return including current node val + max so far
+#       (i.e. max(left_max,right_max)
 
 # T: O(n)
 # S: O(H) for balanced tree OR O(n) for skew tree

@@ -71,8 +71,8 @@ class Queue {
             }
             else {
                 cout << "Queue elements : ";
-                for (int i = front; i <= rear; i++) {
-                    cout << data[i] << " ";
+                for (int i = front; i <= rear; i++) {   // rear can ony to upto MAX_SIZE - 1
+                    cout << data[i] << " ";             // hence i <= rear
                 }
                 cout << endl;
             }

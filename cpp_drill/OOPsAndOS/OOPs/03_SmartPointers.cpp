@@ -92,6 +92,8 @@ int main() {
     cout << *wPtr1.lock() << endl;
     cout << wPtr1.lock().use_count() << endl;   // 2, as said temporarily
 
+    // In short, to use weak ptr to modify data, we need to convert it into
+    // a shared ptr.
     shared_ptr<int> sNewPtr = wPtr1.lock();
     cout << "sNewPtr ptr's value   : " << *sNewPtr << endl;
     cout << "sNewPtr ptr's addr    : " << sNewPtr << endl;

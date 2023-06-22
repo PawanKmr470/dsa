@@ -1,6 +1,7 @@
 # REF : https://leetcode.com/problems/count-good-nodes-in-binary-tree/
 # NOTES :
-#       Just need to count the greater element from root.val
+#      Apply DFS and in each call if node val is > than it's ascendants
+#      then update the max_val with node.val and increase the count.
 
 from collections import deque
 

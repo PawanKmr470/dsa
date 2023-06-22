@@ -12,10 +12,10 @@ class Solution:
     def isValidPalindrome(self, s: str, k: int) -> bool:
 
         def dfs(st, i, j):
-            if i == j:
+            if i == j:          # when remaining strlen is 1
                 return 0
 
-            if i == j - 1:
+            if i == j - 1:      # when remaining strlen is 2
                 return 1 if st[i] != st[j] else 0   # 2 elements are different
                                                     # then 1 can be eliminated to make
                                                     # 1 char string palindrome

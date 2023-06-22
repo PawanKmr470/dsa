@@ -1,4 +1,4 @@
-# REF : https://leetcode.com/problems/kth-smallest-element-in-a-bst/solution/
+# REF : https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 # NOTES :
 #       Inorder traversal of BST gives sorted output
 

@@ -234,4 +234,23 @@ int main(){
     cout << str2 << endl;
 
     cout << str2 + "gale" << endl;  // + is as good as append
+
+    cout << "************** comparator ******************" << endl;
+
+    // each element in arr is a vector of pair of ints
+    vector<pair<int, int>> arr[4];
+    arr[0].push_back({0, 0});
+    arr[1].push_back({1, 10});
+    arr[2].push_back({2, 20});
+    arr[3].push_back({3, 30});
+
+    sort(arr, arr + 4);
+
+    for (int i = 0; i < 4; i++) {
+        cout << "src - " << i << " ";
+        for (auto &j : arr[i]) {
+            cout << "dst - " << j.first << " wt - " << j.second << endl;
+        }
+        cout << endl;
+    }
 }

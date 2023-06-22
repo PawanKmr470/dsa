@@ -1,8 +1,9 @@
 # REF  : https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
 # NOTES :
-#       1 way : find node address if not given
-#               create node:parent hash
-#               apply BFS (iterative using queue) with a visited set
+#       1st way : find node address if not given
+#                 create node:parent hash
+#                 apply BFS (iterative using queue) with a visited set
+#       2nd way : Convert this tree to graph and DFS with visit set till depth k.
 
 from collections import deque
 

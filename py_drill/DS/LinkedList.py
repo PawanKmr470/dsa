@@ -67,6 +67,8 @@ class LinkedList:
         tmp_node.pnext = None
         return cur_node.data
 
+    # Reverse linked list recursive & non-recursive
+    # Doubly linked list
 
 def main():
 

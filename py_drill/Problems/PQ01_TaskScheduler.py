@@ -1,6 +1,7 @@
 # REF : https://leetcode.com/problems/task-scheduler/
 # NOTES:
 #       maxHeap + Queue
+#       python has only Min Heap. For Max Heap can be implemented using -ve numbers.
 
 # T: O(n * c * log 26) ~ O(n)
 # S: O(1), bcz Queue and maxHeap size can go upto 26 distinct elements

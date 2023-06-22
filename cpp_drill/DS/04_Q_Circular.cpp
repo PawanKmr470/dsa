@@ -71,7 +71,7 @@ class Queue {
             }
             else {
                 int i;
-                for (i = front; i != rear; i = (i+1) % MAX_SIZE) {
+                for (i = front; i != rear; i = (i+1) % MAX_SIZE) {  // i != rear, Note it.
                     cout << data[i] << " ";
                 }
                 cout << data[i] << endl;

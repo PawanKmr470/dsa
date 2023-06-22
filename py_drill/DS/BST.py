@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class BSTNode:
     def __init__(self, data):
         self.data = data
@@ -66,7 +67,7 @@ class BST:
 
         stack = []
         stack.append(self.root)
-        while len(stack) > 0:
+        while len(stack) > 0:  # stack will always be non-empty unless bst is traversed.
             node = stack.pop()
             print("Preorder element : {}".format(node.data))
 
@@ -92,15 +93,15 @@ class BST:
     #
     # Inorder Traversal
     #
-    def print_inorder(self):
+    def print_inorder(self):  # pop & print
         if self.root is None:
             print("BST is empty.")
             return
 
         stack = []
         node = self.root
-        while len(stack) or node:
-            if node:
+        while len(stack) or node:  # stack will be empty when all left (root's left subtree)
+            if node:               # will be traversed. Hence "or node" condition
                 stack.append(node)
                 node = node.left
             else:
@@ -108,7 +109,7 @@ class BST:
                 print("Inorder element : {}".format(node.data))
                 node = node.right
 
-    def print_inorder_rec(self):
+    def print_inorder_rec(self):  # pop & print
         if self.root is None:
             print("BST is empty.")
             return
@@ -155,8 +156,8 @@ class BST:
         while len(q):
             cur_node = q.popleft()
             print("Levelorder element : {}".format(cur_node.data))
-            if cur_node.left:
-                q.append(cur_node.left)
+            if cur_node.left:               # Here left condition first due to queue.
+                q.append(cur_node.left)     # It was right in preorder
             if cur_node.right:
                 q.append(cur_node.right)
 
@@ -205,7 +206,6 @@ class BST:
 
 
 def main():
-
     # n1 = Node(10)
     # print(n1)
     # t1 = BSTNode(20)

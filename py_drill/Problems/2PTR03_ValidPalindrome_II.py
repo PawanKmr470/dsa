@@ -12,7 +12,7 @@ class Solution:
         l, r = 0, len(s) - 1
         while l < r:
             if s[l] != s[r]:
-                skip_left_str = s[l+1:r+1]
+                skip_left_str = s[l+1:r+1]  # py str is s[l,r)
                 skip_right_str = s[l:r]
                 return skip_left_str == skip_left_str[::-1] or \
                     skip_right_str == skip_right_str[::-1]
