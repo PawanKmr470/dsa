@@ -10,12 +10,21 @@ using namespace std;
 //      Another approach : Backtracking
 //          Where each ith element is included or excluded from the given array
 //          to form a subset. Draw the decision tree.
+//      GOLDEN condition :
+//          Combinations vs subsets -
+//          subsets are those combinations where element is present OR not present AND
+//          if present then only once. Then only we can compare.
+//      DP is another approach if counting subsets is asked #TODO
 
 // T: O(n*2^n)
 //      2^N subsets will be generated.
-//      while generating each subset we have to copy one of the previous subset
+//      while generating each subset we have to copy one of the previous subset so n.
 // S: O(n*2^n)
 //      we have to store 2^N subsets in ans each of size O(N)
+//      In Detail -
+//          O(n) - we used by adding elemments into one subset list and removing from it.
+//          O(n*2^n) - (if not ignored) for saving output. 2^n operation and each taking max space n.
+//          O(n) - recursion height.
 
 // Cascading
 class Solution {
@@ -69,9 +78,31 @@ public:
     }
 };
 
+// Backtracking (using for loop)
+class Solution2 {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> result;
+        vector<int> subset;
+
+        dfs(0, subset, nums, result);
+        return result;
+    }
+
+    void dfs(int index, vector<int>& subset, vector<int>& nums, vector<vector<int>>& result) {
+        result.push_back(subset);
+
+        for (int i=index; i<nums.size(); i++) {
+            subset.push_back(nums[i]);
+            dfs(i+1, subset, nums, result);
+            subset.pop_back();
+        }
+    }
+};
+
 int main() {
     vector<int> nums = {1,2,3};
-    vector<vector<int>> result = Solution().subsets(nums);
+    vector<vector<int>> result = Solution2().subsets(nums);
     for (auto &i : result) {
         for (auto &j : i) {
             cout << j << " ";
