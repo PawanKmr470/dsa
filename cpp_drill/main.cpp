@@ -1,5 +1,3 @@
-// Ref : https://leetcode.com/problems/longest-common-subsequence/
-
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -24,7 +22,7 @@ public:
             return 1 + lcs_rec(str1, str2, len1 - 1, len2 - 1);
         }
         else {
-            return max(lcs_rec(str1, str2, len1, len2 - 1),     //NOTE : returning 0 here will o/p - LCSstr
+            return max(lcs_rec(str1, str2, len1, len2 - 1),
                          lcs_rec(str1, str2, len1 - 1, len2));
         }
     }
@@ -98,6 +96,7 @@ public:
     int lcs(string s1, string s2) {
         if (s1.empty() || s2.empty()) return 0;
         vector<vector<int>> dp(s1.length() + 1, vector<int> (s2.length() + 1, 0));
+        cout << s1.length() << endl;
         int row, col;
         for (row = 1; row <= s1.length(); row++) {
             for (col = 1; col <= s2.length(); col++) {
@@ -109,7 +108,7 @@ public:
                 }
             }
         }
-        return dp[row - 1][col - 1]; // at the end of for loops row & col are incremented hence - 1
+        return dp[row - 1][col - 1];
     }
 
     vector<char> get_lcs(string s1, string s2) {
@@ -154,28 +153,28 @@ public:
 };
 
 int main() {
-    Solution1 s1;
-    int result = s1.lcs("pawan", "pawn");
-    cout << "result : " << result << endl;
-
-    Solution2 s2;
-    result = s2.lcs("pawan", "pawn");
-    cout << "result : " << result << endl;
-
-    Solution3 s3;
-    result = s3.lcs("pawan", "pawn");
-    cout << "result : " << result << endl;
+//    Solution1 s1;
+//    int result = s1.lcs("pawan", "pawn");
+//    cout << "result : " << result << endl;
+//
+//    Solution2 s2;
+//    result = s2.lcs("pawan", "pawn");
+//    cout << "result : " << result << endl;
+//
+//    Solution3 s3;
+//    result = s3.lcs("pawan", "pawn");
+//    cout << "result : " << result << endl;
 
     Solution4 s4;
-    result = s4.lcs("pawan", "pawn");
+    int result = s4.lcs("pawan", "pawon");
     cout << "result : " << result << endl;
 
-    vector<char> lcs_string = s4.get_lcs("pawan", "pawn");
-    cout << "LCS string is : ";
-    for (char &i: lcs_string) {
-        cout << i;
-    }
-    cout << endl;
+//    vector<char> lcs_string = s4.get_lcs("pawan", "pawn");
+//    cout << "LCS string is : ";
+//    for (char &i: lcs_string) {
+//        cout << i;
+//    }
+//    cout << endl;
 
     return 0;
 }

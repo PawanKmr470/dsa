@@ -25,7 +25,7 @@ S = O(n)
 class Solution2 {
 public:
     int fib(int n) {
-        int cache[1024] = {0};
+        int cache[1024] = {0};      // use vector to get rid of array size
         return mem_fib(n, cache);
     }
 
@@ -64,6 +64,30 @@ public:
     }
 };
 
+/*
+Solution using Tabulation method (DP method)
+T = O(n)
+S = O(1) Optimized space
+*/
+class Solution4 {
+public:
+    int fib(int n) {
+        if (n <= 1) {
+            return n;
+        }
+
+        int sum = 0;
+        int first = 0;
+        int second = 1;
+        for (int i = 2; i <= n; i++) {
+            sum = first + second;
+            first = second;
+            second = sum;
+        }
+        return sum;
+    }
+};
+
 int main() {
     Solution1 s1;
     int ret = s1.fib(8);
@@ -75,6 +99,10 @@ int main() {
 
     Solution3 s3;
     ret = s3.fib(8);
+    cout << "result 3 : " << ret << endl;
+
+    Solution4 s4;
+    ret = s4.fib(8);
     cout << "result 3 : " << ret << endl;
 
     return 0;

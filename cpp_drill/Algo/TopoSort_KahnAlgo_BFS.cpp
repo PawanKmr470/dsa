@@ -72,23 +72,23 @@ class Graph {
 
             for (int i=0; i < noOfVertices; i++) {
                 for (auto &dst : adjList[i])
-                    indegree[dst]++;
+                    indegree[dst]++;                // increment dst's indegree
             }
 
             queue<int> q;
             for (int i=0; i < noOfVertices; i++) {
                 if (indegree[i] == 0)
-                    q.push(i);
+                    q.push(i);                      // push vertices into Q which have 0 indegree
             }
 
             while (!q.empty()) {
                 int node = q.front();
                 q.pop();
-                res.push_back(node);
+                res.push_back(node);                // Pop & add it into result
 
                 for (auto &nei : adjList[node]) {
-                    indegree[nei]--;
-                    if (indegree[nei] == 0)
+                    indegree[nei]--;                // All nei's indegree will get reduced by 1
+                    if (indegree[nei] == 0)         // If indegree is becoming 0, then add it into Q
                         q.push(nei);
                 }
             }

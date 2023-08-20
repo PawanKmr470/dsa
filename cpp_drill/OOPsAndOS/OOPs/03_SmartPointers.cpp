@@ -99,6 +99,7 @@ int main() {
     cout << "sNewPtr ptr's addr    : " << sNewPtr << endl;
     cout << "sNewPtr ptr's ref cnt : " << sNewPtr.use_count() << endl;
 
+    cout << "************************************" << endl;
     weak_ptr<int> wPtr2;
     {
         shared_ptr<int> sPtr2 = make_shared<int> (100);

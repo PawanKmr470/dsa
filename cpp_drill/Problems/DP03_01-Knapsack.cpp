@@ -14,7 +14,7 @@ using namespace std;
 /*
 Basic recursion method
 T - O(2^n)
-S - O(1) no extra DS is required.
+S - O(1) no extra DS is required. O(n) with recursion stack lenght
 */
 class Solution1
 {

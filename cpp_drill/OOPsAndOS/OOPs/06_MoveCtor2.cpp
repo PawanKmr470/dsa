@@ -33,6 +33,14 @@ struct Mystring {
         obj.ptr = nullptr;
     }
 
+    // move assignment operator
+    Mystring& operator=(Mystring &&obj) {
+        cout << "move assignment" << endl;
+        this->ptr = obj.ptr;
+        obj.ptr = nullptr;
+        return *this;
+    }
+
     // dtor
     ~Mystring() {
         cout << "dtor" << endl;
@@ -71,4 +79,10 @@ int main() {
     // dtor         -> this is of v1 object when main is ending
 
     // v2.push_back(move(s));   // This will enforce move operation
+
+    cout << "******************" << endl;
+    Mystring str1;
+    Mystring str2 = move(str1);
+    Mystring str3;
+    str3 = move(str2);
 }

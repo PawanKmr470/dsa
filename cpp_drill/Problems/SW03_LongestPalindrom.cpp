@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+// brute force -
+//     get all substrings and check each substring for palindrom and keep track of greatest substring
+//     T - O(n^2 * n) - extra n for checking palindrom
+//     S - O(1)
+
+// Expand fron centre -
+//     T - O(n^2)
+//     S - O(1)
+
 class Solution {
 public:
     string longestPalindrome(string s) {

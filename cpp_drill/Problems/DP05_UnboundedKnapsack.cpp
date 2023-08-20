@@ -4,7 +4,7 @@ value  [] - [10, 40, 30, 50]
 Capacity w = 10
 
 Put weights in knapsack in such a way that it has max value.
-Ans - 140 from (3 + 3 + 4)
+Ans - 150 from (3 + 3 + 3)
 */
 
 #include <iostream>

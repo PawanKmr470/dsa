@@ -29,6 +29,9 @@ for each (u, v) taken from the sorted list  E
 //        OR vector<vector<int>> edges can also work
 //        edges[u][0] --> u    edges[u][1] --> v    edges[u][2] --> wt
 
+// O(T) : Amortized complexity O(alpha(n)) ~ nearly constant time
+// O(T) : O(logn) without path compression
+// O(S) : O(n)
 class Graph {
     private:
         int noOfVertices;
@@ -36,6 +39,7 @@ class Graph {
         vector<int> parent;
         vector<int> rank;
 
+        // vector<list>* adjList;
         // vector<pair<int, int>> *adjList;
         // vector<vector<pair<int,int>>> adjList;
         // adj list can be taken this way also. Refer : 11_GR_PrintGraph.cpp
@@ -60,7 +64,7 @@ class Graph {
             if (parent[u] == u)
                 return u;
             return parent[u] = findSet(parent[u]); // return findSet(parent[u])
-        }                                               // is without path compression
+        }                                          // is without path compression (O(logn))
 
         // Iterative version
         // int findSet (int u) {
@@ -81,8 +85,8 @@ class Graph {
                 parent[v] = u;
             else
                 parent[v] = u;  // make either one parent but make sure to increase it's rank
-                rank[u]++;
-        }
+                rank[u]++;      // If we do rank[u] += rank[v], Given rank arr was initialized with 1's
+        }                       // then it's a Union By Size
 
         vector<pair<int, pair<int,int>>> kruskal() {
             vector<pair<int, pair<int,int>>> out;
@@ -94,7 +98,7 @@ class Graph {
                 rank.push_back(0);
             }
 
-            sort(edges.begin(), edges.end());
+            sort(edges.begin(), edges.end());               // Sorting due to Kruskal Algorithm
 
             for (int i = 0; i < edges.size(); i++) {
                 int uP = findSet(edges[i].second.first);    // find src parent
